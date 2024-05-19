@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Plates/Plate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/mummy_rig_1_deep.glb" type="PackedScene" id=3]
+[ext_resource path="res://UI/fps logo.png" type="Texture" id=4]
+[ext_resource path="res://UI/Pause/Credits.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mainmenu.gd" type="Script" id=6]
+[ext_resource path="res://UI/Pause/Theme/Theme.tres" type="Theme" id=7]
+[ext_resource path="res://UI/Pause/SFX/select.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Spikes/Spikes.tscn" type="PackedScene" id=9]
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16505, 0 )
+
+[node name="plate" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0158232, -1.16505, 1.2194 )
+
+[node name="plate" parent="plate" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0158232, -1.16505, -14.8417 )
+
+[node name="mummy_rig_1_deep" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86712, 0.142966, -0.511159 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.81674, 0 )
+LockMouse = false
+DevMode = true
+
+[node name="Menu" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="Menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 7 )
+
+[node name="Menu" type="ColorRect" parent="Menu/Control"]
+margin_left = -6.0
+margin_top = -9.0
+margin_right = 575.0
+margin_bottom = -8.0
+rect_scale = Vector2( 1.00993, 739.489 )
+color = Color( 0, 0, 0, 0.427451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Control"]
+margin_left = 87.0
+margin_top = 466.0
+margin_right = 473.0
+margin_bottom = 646.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Menu/Control/VBoxContainer"]
+margin_right = 386.0
+margin_bottom = 35.0
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Menu/Control/VBoxContainer"]
+margin_top = 46.0
+margin_right = 386.0
+margin_bottom = 81.0
+text = "SETTINGS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Menu/Control/VBoxContainer"]
+margin_top = 92.0
+margin_right = 386.0
+margin_bottom = 127.0
+text = "CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Menu/Control/VBoxContainer"]
+margin_top = 138.0
+margin_right = 386.0
+margin_bottom = 173.0
+text = "QUIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Control"]
+margin_left = 931.0
+margin_top = 4.0
+margin_right = 1269.0
+margin_bottom = 194.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" parent="Menu" instance=ExtResource( 5 )]
+visible = false
+
+[node name="SelectAudio" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+
+[node name="spikes3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.353288, -9.1, -3.73468 )
+
+[connection signal="pressed" from="Menu/Control/VBoxContainer/Button" to="Menu" method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu/Control/VBoxContainer/Button2" to="Menu" method="_on_Settings_pressed"]
+[connection signal="pressed" from="Menu/Control/VBoxContainer/Button3" to="Menu" method="Credits"]
+[connection signal="pressed" from="Menu/Control/VBoxContainer/Button4" to="Menu" method="_on_Quit_pressed"]
