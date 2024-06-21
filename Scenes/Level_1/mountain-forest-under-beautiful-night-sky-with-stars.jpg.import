@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/mountain-forest-under-beautiful-night-sky-with-stars.jpg-8c626d8bf7b73b37a2ce76934c5da7e8.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/Level_1/mountain-forest-under-beautiful-night-sky-with-stars.jpg"
+dest_files=[ "res://.import/mountain-forest-under-beautiful-night-sky-with-stars.jpg-8c626d8bf7b73b37a2ce76934c5da7e8.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
