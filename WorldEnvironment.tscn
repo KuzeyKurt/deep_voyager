@@ -2,14 +2,14 @@
 
 [sub_resource type="Environment" id=41]
 ambient_light_color = Color( 0.670588, 0.670588, 0.670588, 1 )
-ambient_light_energy = 0.27
+ambient_light_energy = 1.33
 fog_enabled = true
-fog_color = Color( 0.533333, 0.482353, 0.407843, 1 )
-fog_sun_color = Color( 0.211765, 0.180392, 0.113725, 1 )
-fog_sun_amount = 0.04
+fog_color = Color( 0.671875, 0.599089, 0.492708, 1 )
+fog_sun_color = Color( 0.701961, 0.619608, 0.447059, 1 )
+fog_sun_amount = 0.09
 fog_depth_begin = 2.0
-fog_depth_end = 40.0
-tonemap_exposure = 2.01
+fog_depth_end = 67.2
+tonemap_exposure = 1.74
 ssao_enabled = true
 ssao_intensity = 3.0
 ssao_radius2 = 3.46
@@ -19,6 +19,9 @@ dof_blur_far_enabled = true
 dof_blur_far_distance = 49.27
 dof_blur_far_transition = 21.61
 dof_blur_far_amount = 0.04
+glow_enabled = true
+glow_intensity = 2.91
+glow_strength = 0.71
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource( 41 )

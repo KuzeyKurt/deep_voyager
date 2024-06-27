@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/crosshair007.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Player/SFX/Walking/footstep04.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Player/SFX/Walking/footstep00.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Player/SFX/Walking/footstep07.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/Level_1/SkiesLL_1.hdr" type="Texture" id=9]
 [ext_resource path="res://Player/SFX/Climbing/ladder3.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Player/SFX/Climbing/ladder5.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Player/SFX/Climbing/ladder4.ogg" type="AudioStream" id=12]
@@ -16,13 +17,19 @@
 [sub_resource type="CapsuleShape" id=3]
 height = 2.0
 
+[sub_resource type="PanoramaSky" id=21]
+panorama = ExtResource( 9 )
+
 [sub_resource type="Environment" id=20]
+background_mode = 2
+background_sky = SubResource( 21 )
+ambient_light_color = Color( 0.345098, 0.32549, 0.392157, 1 )
 fog_enabled = true
-fog_color = Color( 0.513726, 0.486275, 0.384314, 1 )
-fog_sun_color = Color( 0.301961, 0.27451, 0.223529, 1 )
-fog_sun_amount = 0.04
+fog_color = Color( 0.745098, 0.619608, 0.52549, 1 )
+fog_sun_color = Color( 0.568627, 0.498039, 0.372549, 1 )
+fog_sun_amount = 0.09
 fog_depth_begin = 2.0
-fog_depth_end = 40.0
+fog_depth_end = 52.0
 tonemap_exposure = 2.0
 ssao_enabled = true
 
@@ -97,6 +104,7 @@ shape = SubResource( 3 )
 transform = Transform( 0.9375, 0, 0, 0, 0.9375, -1.16415e-10, 0, 1.16415e-10, 0.9375, 0, 1.00625, 2.32831e-10 )
 
 [node name="Camera" type="Camera" parent="Head"]
+transform = Transform( 1.06667, 0, 0, 0, 1.06667, 0, 0, 0, 1.06667, 0, 0, 0 )
 environment = SubResource( 20 )
 far = 1000.0
 
